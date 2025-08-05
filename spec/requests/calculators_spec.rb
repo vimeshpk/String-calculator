@@ -15,5 +15,9 @@ RSpec.describe "Calculators" do
     it "supports newlines as delimiters" do
       expect(calculator.add("1\n2,3")).to eq(6)
     end
+
+    it "throws error on negative numbers" do
+      expect { calculator.add("1,-2") }.to raise_error("Negatives not allowed: -2")
+    end
   end
 end
