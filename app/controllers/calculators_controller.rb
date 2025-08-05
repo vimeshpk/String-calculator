@@ -8,6 +8,6 @@ class CalculatorsController < ApplicationController
     negatives = nums.select { |n| n < 0 }
     raise "Negatives not allowed: #{negatives.join(', ')}" if negatives.any?
 
-    nums.sum
+    nums.reject { |n| n > 1000 }.sum
   end
 end
