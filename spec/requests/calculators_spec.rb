@@ -11,5 +11,9 @@ RSpec.describe "Calculators" do
     it "returns sum for comma separated numbers" do
       expect(calculator.add("1,2")).to eq(3)
     end
+
+    it "supports newlines as delimiters" do
+      expect(calculator.add("1\n2,3")).to eq(6)
+    end
   end
 end
